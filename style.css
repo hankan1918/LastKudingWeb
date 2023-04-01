@@ -1,0 +1,56 @@
+@font-face {
+    font-family: 'TheJamsil5Bold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302_01@1.0/TheJamsil5Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+*{
+    font-family: 'TheJamsil5Bold';
+}
+.hidden{
+    display: none;
+}
+#darkMode{
+    background: none;
+    border: none;
+    font-size: 30px;
+    padding: 0;
+}
+body::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+#day{
+    background-color: white;
+    color: rgb(36,36,36);
+}
+#dark{
+    background-color: rgb(36,36,36);
+    color: white;
+}
+#clockTab{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 60px;
+}
+#clockMode{
+    background: none;
+    border: none;
+    font-size: 20px;
+    margin: 10spx;
+}
+.center{
+    text-align: center;
+}
+#title{
+    font-size: 120px;
+    margin: 20px;
+}
+#clock{
+    font-size: 150px;
+    margin:0px;
+}
+ul{
+    padding: 0;
+}
