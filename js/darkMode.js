@@ -11,7 +11,7 @@ if(local=='off'){
     darkMode.innerText = '🌙';
     button.style.color = 'rgb(26,26,26)';
 }
-else{
+else if(local=='on'){
     body.id = 'dark';
     darkMode.innerText = '☀️';
     button.style.color = 'white';
