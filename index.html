@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,42 +8,54 @@
     <link rel="stylesheet" href="style.css">
     <title>Kuding</title>
 </head>
+
 <body id="night" class="hidden">
     <button id="darkMode"></button>
-    <h1 id="title" class="center">Hello!</h1>
+    <div>
+        <h1 id="greeting" class="center"></h1>
+        <form id="nameinput">
+            <h1></h1>
+            <input type="text" placeholder="Who are you?">
+            <input type="submit" value="Enter!">
+        </form>
+    </div>
     <div id="clockTab">
         <button id="clockMode" class="center" width="100px">change Mode</button>
         <h1 id="clock" class="center"></h1>
     </div>
-    <div id="focusTimer">
-        <form id="focusInput">
-            <input id="achievementInput" type="text" placeholder="what you foucus on?" value="Activity">
-            <input id="timeInput" type="number" placeholder="minutes" max="99" value="60">
-            <input type="submit" value="Start">
-        </form>
-        <h3 id="timer" class="hidden"></h3>
-        <h4 id="achievement" class="hidden"></h4>
-    </div>
-    <h2>Write Anything you can show!</h2>
-    <form>
-        <input id="inputField" type="text" placeholder="Write a text HERE!" required>
-        <input id="inputButton" type="submit">
-    </form>
-    <div id="board">
-        <ul>
-            <input type="checkbox">
-            aaaa
-        </ul>
-    </div>
-    <div>
-        <h2></h2>
-    </div>
-    <div id="description">
-        <p>clock, clock mode, darkmode, list</p>
+    <div class="container">
+        <div id="focusTimer" class="item">
+            <form id="focusInput">
+                <input id="achievementInput" type="text" placeholder="what you foucus on?" value="Activity">
+                <input id="timeInput" type="number" placeholder="minutes" max="99" value="60">
+                <input type="submit" value="Start">
+            </form>
+            <h3 id="timer" class="hidden"></h3>
+            <h4 id="achievement" class="hidden"></h4>
+        </div>
+        <div id="list" class="item">
+            <form>
+                <input id="inputField" type="text" placeholder="Write a text HERE!" required>
+                <input id="inputButton" type="submit">
+            </form>
+            <div id="board">
+                <ul>
+                </ul>
+            </div>
+            <div>
+                <h2></h2>
+            </div>
+        </div>
     </div>
     <script src="js/focusTimer.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/board.js"></script>
+    <script src="js/greeting.js"></script>
     <script src="js/darkMode.js"></script>
 </body>
+<footer>
+    <div id="description">
+        <p>clock, clock mode, darkmode, list</p>
+    </div>
+</footer>
 </html>
