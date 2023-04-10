@@ -22,15 +22,19 @@
         <h1 id="clock" class="center"></h1>
     </div>
     <div class="container">
-        <div id="focusTimer" class="item center">
+        <!-- 집중 타이머 -->
+        <div class="item center"> 
             <form id="focusInput">
                 <input id="achievementInput" type="text" placeholder="what you foucus on?" value="Activity">
                 <input id="timeInput" type="number" placeholder="minutes" max="99" value="60">
                 <input type="submit" value="Start">
             </form>
-            <h3 id="timer" class="hidden"></h3>
-            <h4 id="achievement" class="hidden"></h4>
+            <div id="focusTimer" class="hidden">
+                <h3 id="timer"></h3>
+                <h4 id="achievement"></h4>
+            </div>
         </div>
+        <!-- 아무런 목록 -->
         <div id="list" class="item center">
             <form>
                 <input id="inputField" type="text" placeholder="Write a text HERE!" required>
