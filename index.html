@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,15 +7,14 @@
     <link rel="stylesheet" href="style.css">
     <title>Kuding</title>
 </head>
-
 <body id="night" class="hidden">
-    <button id="darkMode"></button>
+    <button id="darkMode">🌙</button>
     <div>
-        <h1 id="greeting" class="center"></h1>
-        <form id="nameinput">
-            <h1></h1>
-            <input type="text" placeholder="Who are you?">
-            <input type="submit" value="Enter!">
+        <button id="logOut" class="hidden">Log Out</button>
+        <h1 id="greeting" class="center hidden"></h1>
+        <form id="nameForm" class="center">
+            <input id="nameinput" type="text" placeholder="Who are you?" class="center" required><br>
+            <input id="namebutton" type="submit" value="Enter!">
         </form>
     </div>
     <div id="clockTab">
@@ -24,7 +22,7 @@
         <h1 id="clock" class="center"></h1>
     </div>
     <div class="container">
-        <div id="focusTimer" class="item">
+        <div id="focusTimer" class="item center">
             <form id="focusInput">
                 <input id="achievementInput" type="text" placeholder="what you foucus on?" value="Activity">
                 <input id="timeInput" type="number" placeholder="minutes" max="99" value="60">
@@ -33,7 +31,7 @@
             <h3 id="timer" class="hidden"></h3>
             <h4 id="achievement" class="hidden"></h4>
         </div>
-        <div id="list" class="item">
+        <div id="list" class="item center">
             <form>
                 <input id="inputField" type="text" placeholder="Write a text HERE!" required>
                 <input id="inputButton" type="submit">

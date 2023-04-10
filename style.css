@@ -20,6 +20,9 @@
 .hidden{
     display: none;
 }
+#greeting{
+    font-size: 80px;
+}
 #darkMode{
     font-size: 25px;
     cursor: pointer;
@@ -30,6 +33,16 @@
 }
 body::-webkit-scrollbar {
     display: none; /* 크롬, 사파리, 오페라, 엣지 */
+}
+input{
+    background: none;
+    color: black;
+    border: 0;
+}
+button{
+    background: none;
+    color: black;
+    border: 0;
 }
 #day{
     background-color: white;
@@ -63,6 +76,9 @@ body::-webkit-scrollbar {
 #clock{
     font-size: 150px;
     margin:0px;
+}
+#logOut{
+    position: absolute;
 }
 ul{
     padding: 0;
