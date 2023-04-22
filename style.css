@@ -4,9 +4,11 @@
     font-weight: 700;
     font-style: normal;
 }
-*{
+
+* {
     font-family: 'TheJamsil5Bold';
 }
+
 .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -17,13 +19,15 @@
     padding: 10px;
 }
 
-.hidden{
+.hidden {
     display: none;
 }
-#greeting{
+
+#greeting {
     font-size: 80px;
 }
-#darkMode{
+
+#darkMode {
     position: fixed;
     font-size: 25px;
     background: none;
@@ -34,28 +38,35 @@
     top: 0;
     padding: 10px;
 }
+
 body::-webkit-scrollbar {
-    display: none; /* 크롬, 사파리, 오페라, 엣지 */
+    display: none;
+    /* 크롬, 사파리, 오페라, 엣지 */
 }
-input{
+
+input {
     background: none;
     color: black;
     border: 0;
 }
-button{
+
+button {
     background: none;
     color: black;
     border: 0;
 }
-#day{
+
+#day {
     background-color: white;
-    color: rgb(36,36,36);
+    color: rgb(36, 36, 36);
 }
-#dark{
-    background-color: rgb(36,36,36);
+
+#dark {
+    background-color: rgb(36, 36, 36);
     color: white;
 }
-#clockTab{
+
+#clockTab {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -63,33 +74,43 @@ button{
     margin: 60px;
 }
 
-#logOut, #timerSubmit, #quitButton, #clockMode{
+#logOut,
+#timerSubmit,
+#quitButton,
+#clockMode {
     cursor: pointer;
     background: none;
     border: none;
     font-size: 20px;
 }
-.center{
+
+.center {
     text-align: center;
 }
-#title{
+
+#title {
     font-size: 120px;
     margin: 20px;
 }
-#clock{
+
+#clock {
     font-size: 150px;
-    margin:0px;
+    margin: 0px;
 }
-ul{
-    padding: 0;
+
+ul {
+    list-style: none;
+    padding-left: 0px;
 }
+
 #logOut {
     position: fixed;
     top: 0;
     right: 0;
     margin: 30px;
 }
-footer{
+
+footer {
     position: fixed;
     bottom: 0;
 
@@ -97,24 +118,22 @@ footer{
 
 body {
     display: grid;
-    grid-template-areas: 
-      "greetingTab"
-      "clockTab"
-      "container";
+    grid-template-areas:
+        "greetingTab"
+        "clockTab"
+        "container";
     grid-template-rows: 200px 2fr 300px
-  }
-  
-  #greetingTab {
+}
+
+#greetingTab {
     padding-top: 30px;
     grid-area: greetingTab;
-  }
-  
-  #clockTab {
+}
+
+#clockTab {
     grid-area: clockTab;
-  }
-  
-  .container {
+}
+
+.container {
     grid-area: container;
-  }
-  
-  
+}
