@@ -7,8 +7,9 @@ const focusInput = document.querySelector("#focusInput");
 const timer = document.querySelector("#timer");
 const achievement = document.querySelector("#achievement");
 const focusTimer = document.querySelector('#focusTimer');
+const quiteButton = document.querySelector('#quitButton')
 
-const localtimer = window.localtimerStorage;
+const localtimer = window.localStorage;
 
 const SETTIMEKEY = 'settime';
 const TIMERKEY = 'timer';
@@ -22,6 +23,10 @@ function DrawTimer(){
     time = Number(localtimer.getItem(TIMERKEY))-((curTime.getTime() - new Date(localtimer.getItem(SETTIMEKEY)).getTime())/(1000*60));
     timer.innerText = `${Math.ceil(time)}M left.`;
 
+}
+
+function forceQuit(){
+    time = -1;
 }
 
 function whileRunningTimer(state){
@@ -45,6 +50,7 @@ function inputHandler(event){
 
 }
 focusInput.addEventListener("submit", inputHandler);
+quiteButton.addEventListener("click",forceQuit);
 
 if(localtimer.getItem(SETTIMEKEY)==undefined){
     whileRunningTimer(0);
