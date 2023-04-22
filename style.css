@@ -24,11 +24,14 @@
     font-size: 80px;
 }
 #darkMode{
+    position: fixed;
     font-size: 25px;
-    cursor: pointer;
     background: none;
     border: none;
     font-size: 30px;
+    cursor: pointer;
+    left: 0;
+    top: 0;
     padding: 10px;
 }
 body::-webkit-scrollbar {
@@ -65,7 +68,6 @@ button{
     background: none;
     border: none;
     font-size: 20px;
-    margin: 10px;
 }
 .center{
     text-align: center;
@@ -81,3 +83,38 @@ button{
 ul{
     padding: 0;
 }
+#logOut {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 30px;
+}
+footer{
+    position: fixed;
+    bottom: 0;
+
+}
+
+body {
+    display: grid;
+    grid-template-areas: 
+      "greetingTab"
+      "clockTab"
+      "container";
+    grid-template-rows: 200px 2fr 300px
+  }
+  
+  #greetingTab {
+    padding-top: 30px;
+    grid-area: greetingTab;
+  }
+  
+  #clockTab {
+    grid-area: clockTab;
+  }
+  
+  .container {
+    grid-area: container;
+  }
+  
+  
