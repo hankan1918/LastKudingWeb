@@ -1,53 +1,71 @@
+//입력부
 const timeInput = document.querySelector("#timeInput");
 const achievementInput = document.querySelector("#achievementInput");
 const focusInput = document.querySelector("#focusInput");
+
+//줄력부
 const timer = document.querySelector("#timer");
 const achievement = document.querySelector("#achievement");
 const focusTimer = document.querySelector('#focusTimer');
-const FOCUSACHIKEY = 'achi';
-const FOCUSTIMERKEY = 'times';
-const FOCUSENDKEY ='endtime';
-const local = window.localStorage;
-const date = new Date();
 
-if(local.getItem(FOCUSTIMERKEY)!=undefined&&local.getItem(FOCUSACHIKEY)!=undefined){
-    drawTimer();
-    hideInputForm();
+const localtimer = window.localtimerStorage;
+
+const SETTIMEKEY = 'settime';
+const TIMERKEY = 'timer';
+const ACHIEVEMENTKEY = 'achievement';
+
+let time=0;
+
+function DrawTimer(){
+    achievement.innerText = localtimer.getItem(ACHIEVEMENTKEY)
+    const curTime = new Date();
+    time = Number(localtimer.getItem(TIMERKEY))-((curTime.getTime() - new Date(localtimer.getItem(SETTIMEKEY)).getTime())/(1000*60));
+    timer.innerText = `${Math.ceil(time)}M left.`;
+
 }
 
-function hideInputForm(){
-    focusInput.classList.add('hidden');
-    focusTimer.classList.remove('hidden');
+function whileRunningTimer(state){
+    if(state){
+        focusInput.classList.add('hidden');
+        focusTimer.classList.remove('hidden');
+        DrawTimer();
+    }
+    else{
+        focusInput.classList.remove('hidden');
+        focusTimer.classList.add('hidden');
+    }
 }
 
-function showInputForm(){
-    focusTimer.classList.add('hidden');
-    focusInput.classList.remove('hidden');
-}
-
-function drawTimer(){
-    achievement.innerText = local.getItem(FOCUSACHIKEY);
-    timer.innerText = local.getItem(FOCUSLEFTKEY);
-}
-
-function setStorageHandler(event){
+function inputHandler(event){
     event.preventDefault();
-    console.log(achievementInput.value, timeInput.value);
-    local.setItem(FOCUSTIMERKEY,timeInput.value);
-    const hours = String(date.getHours()).padStart(2,0);
-    const minutes = String(date.getMinutes()).padStart(2,0);
-    const seconds = String(date.getSeconds()).padStart(2,0);
-    const settime = `${hours}:${minutes}:${seconds}`;
-    local.setItem(FOCUSENDKEY, settime)
-    local.setItem(FOCUSACHIKEY, achievementInput.value);
-    drawTimer();
-    hideInputForm();
+    localtimer.setItem(ACHIEVEMENTKEY, achievementInput.value);
+    localtimer.setItem(TIMERKEY, timeInput.value);
+    localtimer.setItem(SETTIMEKEY, new Date());
+    whileRunningTimer(1);
 
+}
+focusInput.addEventListener("submit", inputHandler);
 
-    // setInterval(() => {
-    //     local.setItem(FOCUSLEFTKEY)=date.getMinutes()-Number(local.getItem(FOCUSTIMERKEY));
-    //     drawTimer();
-    // }, 1000);
+if(localtimer.getItem(SETTIMEKEY)==undefined){
+    whileRunningTimer(0);
+}
+else{
+    whileRunningTimer(1);
 }
 
-focusInput.addEventListener("submit", setStorageHandler);
+setInterval(() => {
+    if(time<0){
+        whileRunningTimer(0);
+        alert(`${localtimer.getItem(ACHIEVEMENTKEY)} is over!`);
+        localtimer.removeItem(ACHIEVEMENTKEY);
+        localtimer.removeItem(TIMERKEY);
+        localtimer.removeItem(SETTIMEKEY);
+        time = 0;
+    }
+    else{
+        if(localtimer.getItem(SETTIMEKEY)!=undefined){
+            DrawTimer();
+            //console.log(time);
+        }
+    }
+}, 1000);
